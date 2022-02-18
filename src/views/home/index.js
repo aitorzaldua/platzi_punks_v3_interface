@@ -1,7 +1,7 @@
 const Home = () => {
     return (
         <>
-             <p>Hello decentralized buddy</p>
+             <p>Hello, decentralized buddy</p>
         </>
     );
 }
