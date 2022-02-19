@@ -58,8 +58,14 @@ const MainLayout = ({ children }) => {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Flex alignItems="center">
-              <Image src="../../../public/favicon.webp" width="80px" />
-              <Heading size="md" color="purple" mt={0.2} ml={1}>
+            {/* <Image src="./images/platzi.jpg" width="80px" /> */}
+              <Heading size="sm" color="#FFD60A" mt={0.2} ml={1}>
+                Draft
+              </Heading>
+              <Heading size="sm" color="#000814" mt={0.2} ml={1}>
+                Digital
+              </Heading>
+              <Heading size="sm" color="purple" mt={0.2} ml={1}>
                 Punks
               </Heading>
             </Flex>
