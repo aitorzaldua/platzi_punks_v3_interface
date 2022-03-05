@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import usePlatziPunks from "../usePlatzi";
 
 const getPunkData = async ({ platziPunks, tokenId }) => {
+    
     const [
       tokenURI,
       dna,
