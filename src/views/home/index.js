@@ -12,6 +12,7 @@ import {
 import { useWeb3React } from "@web3-react/core";
 import usePlatziPunks from "../../hooks/usePlatzi";
 import { useCallback, useEffect, useState } from "react";
+
 const Home = () => {
     const [imageSrc, setImageSrc] = useState("");
     const [isMinting, setIsMinting] = useState(false);
