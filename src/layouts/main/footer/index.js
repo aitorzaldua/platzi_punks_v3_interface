@@ -24,14 +24,11 @@ const Footer = () => {
           py={4}
           direction={{ base: "column", md: "row" }}
           spacing={4}
-          justify={{ base: "center", md: "space-between" }}
+          justify={{ base: "center"}}
           align={{ base: "center", md: "center" }}
         >
           <Text>
-            © {new Date().getFullYear()} Original designs by
-            <Link ml={1} href="https://twitter.com/pablostanley">
-              Pablo Stanley -  Draft Digital Punks was made with 💚 by MG 
-            </Link>
+            © {new Date().getFullYear()} Draft Digital Punks was made with 💚 by MG 
           </Text>
         </Container>
       </Box>

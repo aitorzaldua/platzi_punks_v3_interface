@@ -12,6 +12,7 @@ import {
 import { useWeb3React } from "@web3-react/core";
 import usePlatziPunks from "../../hooks/usePlatzi";
 import { useCallback, useEffect, useState } from "react";
+import useTruncatedAddress from  "../../hooks/useTruncatedAddress";
 
 const Home = () => {
     const [imageSrc, setImageSrc] = useState("");
@@ -67,6 +68,35 @@ const Home = () => {
         })
     }
 
+    //Reminder Supply
+    const [maxSupply, setMaxSupply] = useState();
+    const [remSupply, setRemSupply] = useState();
+    const [totalSupply, setTotalSupply] = useState();
+
+    const getMaxSupply = useCallback(async () => {
+        if (platziPunks) {
+            const result = await platziPunks.methods.maxSupply().call();
+            const totalSupply = await platziPunks.methods.totalSupply().call();
+
+          const remainigSupply = result - totalSupply + 1;
+
+            setMaxSupply(result);
+            setRemSupply(remainigSupply);
+            setTotalSupply (totalSupply);
+        } 
+    }, [platziPunks]);
+
+    useEffect(() => {
+        getMaxSupply();
+    }, [getMaxSupply]);
+
+     //End of reminder supply
+    //address
+    const truncatedAddress = useTruncatedAddress(account);
+
+    if (!active) return "Please, connect your wallet";
+   
+
     return (
         <Stack
       align={"center"}
@@ -105,7 +135,7 @@ const Home = () => {
         Draft Digital Punks is a collection of randomized Avatars whose metadata is stored on-chain. Each Punk is generated sequentially based on your address and current id, so it is unique, exclusive to you.
         </Text>
         <Text color={"green.500"}>
-        There are only 10000 in existence and 9982 remains to minted. Check your collection at https://testnets.opensea.io/
+        There are only {maxSupply} in existence and {remSupply} remains to minted. Check your collection at https://testnets.opensea.io/
         </Text>
         <Stack
           spacing={{ base: 4, sm: 6 }}
@@ -145,15 +175,14 @@ const Home = () => {
           <>
             <Flex mt={2}>
               <Badge>
-                Next ID:
+                Next ID: {totalSupply}
                 <Badge ml={1} colorScheme="green">
-                  1
                 </Badge>
               </Badge>
               <Badge ml={2}>
-                Address:
+                Address: 
                 <Badge ml={1} colorScheme="green">
-                  0x0000...0000
+                  {truncatedAddress}
                 </Badge>
               </Badge>
             </Flex>

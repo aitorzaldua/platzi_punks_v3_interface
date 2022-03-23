@@ -39,7 +39,7 @@ const Punk = () => {
             base: "auto",
             md: 0,
           }}
-          name={punk.name}
+           name={punk.name}
           image={punk.image}
         />
         <Button disabled={account !== punk.owner} colorScheme="green">
