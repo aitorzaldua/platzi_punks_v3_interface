@@ -80,7 +80,7 @@ const WalletData = () => {
           leftIcon={<AddIcon />}
           onClick={connect}  
         >
-          {isUnsupportedChain ? "Not supported chain" : "Conectar wallet"}
+          {isUnsupportedChain ? "Not supported chain" : "Connect wallet"}
         </Button>
       )}
     </Flex>

@@ -94,22 +94,18 @@ const Home = () => {
               zIndex: -1,
             }}
           >
-            Un Platzi Punk
+            Create your NFT
           </Text>
           <br />
           <Text as={"span"} color={"green.400"}>
-            nunca para de aprender
+            Based on the original designs by Pablo Stanley
           </Text>
         </Heading>
         <Text color={"gray.500"}>
-          Platzi Punks es una colección de Avatares randomizados cuya metadata
-          es almacenada on-chain. Poseen características únicas y sólo hay 10000
-          en existencia.
+        Draft Digital Punks is a collection of randomized Avatars whose metadata is stored on-chain. Each Punk is generated sequentially based on your address and current id, so it is unique, exclusive to you.
         </Text>
         <Text color={"green.500"}>
-          Cada Platzi Punk se genera de forma secuencial basado en tu address,
-          usa el previsualizador para averiguar cuál sería tu Platzi Punk si
-          minteas en este momento
+        There are only 10000 in existence and 9982 remains to minted. Check your collection at https://testnets.opensea.io/
         </Text>
         <Stack
           spacing={{ base: 4, sm: 6 }}
@@ -127,11 +123,11 @@ const Home = () => {
             onClick={mint}
             isLoading = {isMinting}
           >
-            Obtén tu punk
+            Mint Now!
           </Button>
           <Link to="/punks">
             <Button rounded={"full"} size={"lg"} fontWeight={"normal"} px={6}>
-              Galería
+              Gallery
             </Button>
           </Link>
         </Stack>
@@ -167,11 +163,11 @@ const Home = () => {
               size="xs"
               colorScheme="green"
             >
-              Actualizar
+              Visualize
             </Button>
           </>
         ) : (
-          <Badge mt={2}>Wallet desconectado</Badge>
+          <Badge mt={2}>Wallet disconnected</Badge>
         )}
       </Flex>
     </Stack>

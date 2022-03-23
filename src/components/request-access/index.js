@@ -10,8 +10,8 @@ import {
     return (
       <Alert status="error">
         <AlertIcon />
-        <AlertTitle mr={2}>Conecta tu wallet</AlertTitle>
-        <AlertDescription>para acceder a la app</AlertDescription>
+        <AlertTitle mr={2}>Connect your wallet</AlertTitle>
+        <AlertDescription>To access the App</AlertDescription>
         <CloseButton position="absolute" right="8px" top="8px" />
       </Alert>
     );
